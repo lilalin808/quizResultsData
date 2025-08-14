@@ -62,14 +62,15 @@ onAuthStateChanged(auth, (user) => {
   const isLoggedIn = !!user;
 
   search.style.display = isLoggedIn ? "inline-block" : "none";
-
   signoutButton.style.display = isLoggedIn ? "inline-block" : "none";
   viewModeSelect.style.display = isLoggedIn ? "inline-block" : "none";
   form.style.display = isLoggedIn ? "none" : "block";
-   if (isLoggedIn) {
-    loadStudyData(); // ✅ Only load data when logged in
 
+  if (isLoggedIn) {
+    loadStudyData(); // ✅ Only load data when logged in
+  }
 });
+
 
 // Handle signout
 signoutButton.addEventListener("click", async () => {
